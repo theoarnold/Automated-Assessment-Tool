@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel= "stylesheet" href="/static/styles.css"
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching-Staff Review Statistics</title>
+</head>
+<body>
+  
+  <p><a id = back_button href ="/staff">Back to Staff page</a></p>
+
+    <h1 id = "title">Teaching-Staff Review Statistics</h1>
+
+    <p class = para_text>In this section memebers of the teaching staff can review 
+      either individual, or cohort statistics.  Both are imported from excel sheets, ensuring 
+      that any updates to marks will be reflected on the webpage.  </p>
+
+
+    <h2 id = "subtitle">Individual Students Table</h2>
+
+    <p class = para_text> Below is a number of statistics relating to a sample of individual students.
+                          It is displayed as an image file, which can be downloaded below.  
+    </p>
+    
+    <p><a href="{{url_for('download_image')}}">Download Individual Students Table</a></p>
+
+      <img id = "table1" src = "/static/table1.jpg">
+
+    <!-- <table id="individual_students">
+        {% for row in range(1, sheet.max_row + 1) %}
+        <tr>
+          {% for col in range(1, sheet.max_column + 1): %}
+          <td>{{ sheet.cell(row, col).value }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table> -->
+
+      <h2 id = "subtitle">Cohort of Students Table</h2>
+
+      <p class = para_text> Below is a number of statistics relating to a cohort of students,
+        with previous cohorts to create a useful comparison for the teaching staff.  It is displayed 
+      from an excel spreadsheet, which can be downloaded from the below button.</p>
+
+        <p><a href="{{url_for('download_table')}}">Download Cohort of Students Table</a></p>
+
+      <table id="cohort_of_students">
+        {% for row in range(1, sheet.max_row + 1) %}
+        <tr>
+          {% for col in range(1, sheet.max_column + 1): %}
+          <td>{{ sheet.cell(row, col).value }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+
+</body>
+</html>

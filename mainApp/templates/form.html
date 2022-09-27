@@ -1,0 +1,17 @@
+{% extends "assessment_boiler_template.html" %}
+
+{% block title %} Create {% endblock %}
+
+{% block content %}
+	{% for msg in get_flashed_messages() %}
+		<div class="alert alert-primary" role="alert">
+		{{ msg }}
+		</div>
+	{% endfor %}
+
+{% for qst in questions %}
+
+<a href="{{ url_for('upload_question',id=qst.id,ass=ass) }}">{{ qst.question }}</a>
+
+{% endfor %}
+{% endblock %}

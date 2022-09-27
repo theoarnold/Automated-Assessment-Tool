@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Add Text Question</h1>
+<form method="POST"action="">
+    {{ form.csrf_token }}
+    <p id="question_name"> {{ form.name.label }} {{ form.name }} </p>
+    <p id="short_description"> {{ form.shortDescription.label }} {{ form.shortDescription }} </p>
+    <p id="question"> {{ form.question.label }} {{ form.question }} </p>
+    <p id="answer"> {{ form.answer.label }} {{ form.answer }} </p>
+    <p id="correct_feedback"> {{ form.correctFeedback.label }} {{ form.correctFeedback }} </p>
+    <p id="incorrect_feedback"> {{ form.incorrectFeedback.label }} {{ form.incorrectFeedback }} </p>
+    <p id="marks_awarded"> {{ form.marksAwarded.label }} {{ form.marksAwarded }} </p> 
+    <p><input type="submit" value="Save Changes"></p>
+</form>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Hello, World!</h1>
+{% for question in type1questions %}
+    <div class="question-container"><p>Question Number: {{ question.id }}<br>    
+    Question: {{ question.question }}<br>
+    Answer Options: {{ question.answer_option_1 }}, {{ question.answer_option_2}}, {{ question.answer_option_3 }}<br>
+    Correct Answer: {{ question.correct_answer }}<br>
+    Correct answer feedback: {{ question.correct_answer_feedback }}<br>
+    Incorrect answer feedback: {{ question.incorrect_answer_feedback }} <br>
+    Question tags: {{ question.question_tag_1 }}, {{ question.question_tag_2 }}, {{ question.question_tag_3 }}<br>
+    Marks available for question: {{ question.marks_available }}<br>
+    Feedforward comments: {{ question.feedforward_comments }}</p>
+    <a href="/delete_type_one_question/{{question.id}}"><button class="delete-question-button">Delete</button></a>
+    <a href="/edit_type_one_question/{{question.id}}"><button class="edit-question-button">Edit</button></a>
+</div>
+{% endfor %}
+<p><a href="{{ url_for('addaquestion') }}">Add a question</a></p>
+<p><a href="{{ url_for('question2List') }}">List of question 2</a></p>
+<p><a href="{{ url_for('assessment_home') }}">assessment_home</a></p>
+<p><a href="/review_statistics">Review statistics</a></p>
+
+{% endblock content %}

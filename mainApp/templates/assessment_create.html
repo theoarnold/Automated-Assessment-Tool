@@ -1,0 +1,18 @@
+{% extends "assessment_boiler_template.html" %}
+
+{% block title %} Create {% endblock %}
+
+{% block content %}
+	<div class="d-flex justify-content-center m-5">
+	<form method="POST">
+		{{ form.csrf_token }}
+		{%for field in form %}
+		<div>{{ field.label }}</div>
+	<div>
+		{{ field }}
+	</div>
+		{% endfor %}
+	</form>
+	</div>
+
+{% endblock %}

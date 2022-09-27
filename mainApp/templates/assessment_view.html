@@ -1,0 +1,22 @@
+{% extends 'assessment_boiler_template.html' %}
+
+{% block title %}View{% endblock %}
+
+{% block content %}
+
+
+	<h1 class="text-center">{{ model.assessment_title }}</h1>
+
+	<p>{{ model.questions }}</p>
+
+
+
+
+	<a class="btn btn-primary" href="{{ url_for('assessment_question_add',id=model.id)}}" role="button">Upload Questions</a>
+	<a class="btn btn-danger float-end" href="{{ url_for('assessment_delete',id=model.id)}}" role="button">Delete</a>
+
+
+{% endblock %}
+
+
+

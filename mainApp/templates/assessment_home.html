@@ -1,0 +1,38 @@
+{% extends "assessment_boiler_template.html" %}
+
+{% block title %} Home {% endblock %}
+{% block content %}
+	{% for msg in get_flashed_messages() %}
+		<div class="alert alert-primary" role="alert">
+		{{ msg }}
+		</div>
+	{% endfor %}
+
+
+	<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Assessment Name</th>
+      <th scope="col">Created On</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for i in query %}
+    <tr>
+      <td><a href="{{ url_for('assessment_view',id=i.id)}}">{{ i.assessment_title }}</a></td>
+      <td>{{ i.date_created_on }}</td>
+      {% if i.assessment_type==0: %}
+      <td>Formative</td>
+      {% else %}
+      <td>Summative</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+	
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+html{
+    margin:0;
+    padding:0;
+}
+
+.question-container{
+    border: 1px solid #444;
+
+}
+
+#stats_title {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+#stats_subtitle {
+    margin-bottom: 3%;
+}
+
+.stats_para_text {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+}
+
+#cohort_of_students {
+    float: center;
+    margin-bottom: 5%;
+    border: 5px solid black;
+}
+
+#back_button {
+    float: right;
+}
